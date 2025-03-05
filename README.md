@@ -13,7 +13,6 @@ The setup consists of:
 
 ## Prerequisites
 
-- Windows OS
 - Docker Desktop installed and running
 - Basic knowledge of command line operations
 - Administrator privileges (for editing hosts file)
