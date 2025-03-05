@@ -24,7 +24,8 @@ The setup consists of:
 - `.env`: Environment variables for Visual DB
 - `setup.cmd`: Windows batch file to set up the environment
 - `stop.cmd`: Windows batch file to stop all services
-- `restart.cmd`: Windows batch file to restart services after configuration changes
+- `setup.sh`: macOS script to set up the environment
+- `stop.sh`: macOS script to stop all services
 
 ## Installation
 
@@ -32,7 +33,7 @@ The setup consists of:
 
 2. **Edit the hosts file**:
    - Run Notepad as Administrator
-   - Open `C:\Windows\System32\drivers\etc\hosts`
+   - Open `C:\Windows\System32\drivers\etc\hosts` (or `/etc/hosts` on macOS)
    - Add this line: `127.0.0.1 visualdb.local`
    - Save the file
 
