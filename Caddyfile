@@ -1,0 +1,19 @@
+# Simple Caddyfile for visualdb.local
+visualdb.local {
+    # Use automatic HTTPS with internal CA for intranet
+    tls internal
+    
+    # Forward requests to the visualdb container
+    reverse_proxy visualdb:80
+    
+    # Basic logging
+    log {
+        output file /data/access.log
+    }
+}
+
+# Also handle www variant if needed
+www.visualdb.local {
+    # Redirect to non-www version
+    redir https://visualdb.local{uri} permanent
+}

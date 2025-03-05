@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  visualdb:
+    image: visualdb/visualdb-x64:v250
+    container_name: visualdb
+    restart: always
+    environment:
+      - VDB_HOST_ID=${VDB_HOST_ID}
+      - VDB_API_KEY=${VDB_API_KEY}
+      - VDB_ENCRYPTION_KEY=${VDB_ENCRYPTION_KEY}
+      - VDB_TOKEN_SECRET=${VDB_TOKEN_SECRET}
+    networks:
+      - internal
+
+  caddy:
+    image: caddy:2
+    container_name: caddy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:
