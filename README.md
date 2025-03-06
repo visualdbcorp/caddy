@@ -37,12 +37,19 @@ The setup consists of:
    - Add this line: `127.0.0.1 visualdb.local`
    - Save the file
 
-3. **Run the setup script**:
+3. **Update docker image**:
+   - Edit docker-compose.yml
+   - Make sure the docker image for visualdb matches your CPU architecture
+     - visualdb/visualdb-x64 for Intel/AMD systems
+     - visualdb/visualdb-arm64 for ARM systems
+   - Make sure the tag (such as v250) is a recent build
+
+4. **Run the setup script**:
    - Open Command Prompt
    - Navigate to the directory containing the files
    - Run `setup.cmd`
 
-4. **Access Visual DB**:
+5. **Access Visual DB**:
    - Open a web browser
    - Navigate to `https://visualdb.local`
    - You'll likely see a security warning (because of the self-signed certificate)
@@ -75,7 +82,7 @@ The `.env` file must be filled in with valid values before first use:
 VDB_HOST_ID=********************************
 VDB_API_KEY=*******************************************
 VDB_ENCRYPTION_KEY=**********************
-VDB_TOKEN_SECRET=**************************************************************************************
+VDB_TOKEN_SECRET=*********************************************************************
 ```
 
 These are passed to the Visual DB container during startup.
