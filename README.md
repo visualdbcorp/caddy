@@ -103,13 +103,6 @@ Run `stop.cmd` to stop all services:
 stop.cmd
 ```
 
-### Restarting After Configuration Changes
-
-If you modify the Caddyfile or other configuration files, run `restart.cmd` to apply changes:
-```
-restart.cmd
-```
-
 ## Troubleshooting
 
 ### Browser Shows "Connection Refused"
@@ -147,9 +140,10 @@ If ports 80 or 443 are already in use by another service (like IIS, Skype, or an
 
 To use a different domain name:
 
+1. Run `stop.cmd` to stop containers
 1. Edit the `Caddyfile` and replace all instances of `visualdb.local` with your preferred name
 2. Update your hosts file with the new domain name
-3. Run `restart.cmd` to apply changes
+3. Run `setup.cmd` to apply changes and start containers
 
 ### Adding Multiple Domains
 
@@ -184,8 +178,9 @@ For production or internet-facing deployments, consider:
 
 To update to newer versions of Visual DB or Caddy:
 
+1. Run `stop.cmd` to stop containers
 1. Edit the `docker-compose.yml` file to specify the desired image versions
-2. Run `restart.cmd` to pull new images and restart containers
+2. Run `start.cmd` to pull new images and restart containers
 
 ### Viewing Logs
 
