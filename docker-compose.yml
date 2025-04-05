@@ -2,7 +2,7 @@ version: '3'
 
 services:
   visualdb:
-    image: visualdb/visualdb-x64:LATEST
+    image: visualdb/visualdb-x64:latest
     container_name: visualdb
     restart: always
     environment:
