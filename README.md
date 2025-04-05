@@ -42,7 +42,6 @@ The setup consists of:
    - Make sure the docker image for visualdb matches your CPU architecture
      - `visualdb/visualdb-x64` for Intel/AMD systems
      - `visualdb/visualdb-arm64` for ARM systems
-   - Make sure the tag (such as `v250`) is a recent build
 
 4. **Run the setup script**:
    - Open Command Prompt
